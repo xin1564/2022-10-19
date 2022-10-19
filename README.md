@@ -8,7 +8,7 @@
    -郵件伺服器（mail server）Sendmail、Postfix
    -網頁伺服器（Web server）Apache、lighttpd
    -FTP伺服器（FTP server）vs-ftpd
-      -(https://zh.wikipedia.org/zh-tw/%E6%9C%8D%E5%8A%A1%E5%99%A8)
+    (https://zh.wikipedia.org/zh-tw/%E6%9C%8D%E5%8A%A1%E5%99%A8)
    
   -手機作業系統
    -Android
@@ -19,17 +19,24 @@
    -Glide OS (https://sls.weco.net/node/21342)
 - 作業系統的功能與服務 
 - 作業系統的運作模式:Dual mode operation - 雙重模式
-  - user mode vs Kernel Mode
-  - 為了避免一個使用者的程式修改其他使用者的程式甚至是系統核心， 並且更進一步，讓作業系統可以壟斷所有的硬體資源，
+- user mode vs Kernel Mode
+   - 為了避免一個使用者的程式修改其他使用者的程式甚至是系統核心， 並且更進一步，讓作業系統可以壟斷所有的硬體資源，
     大部分的機器(或者 CPU)至少會有二個執行特權(privilege)：Kernel mode (又稱 System mode) 與 User mode。
     
-  - 1. 之所以要有 Kernel mode 和 User mode 之分，是因為我們希望作業系統可以壟斷所有的硬體操作，讓一般的程式不能亂搞。
+   - 1. 之所以要有 Kernel mode 和 User mode 之分，是因為我們希望作業系統可以壟斷所有的硬體操作，讓一般的程式不能亂搞。
   
-  - 2. Kernel mode 就是萬能的，只要是 CPU 能管的硬體，Kernel mode 的程式就可以透過 machine code 來操作該硬體。
+   - 2. Kernel mode 就是萬能的，只要是 CPU 能管的硬體，Kernel mode 的程式就可以透過 machine code 來操作該硬體。
   
-  - 3. 3. User mode is basically a "restricted" mode. Do nothing but some harmless behavior.
+   - 3. 3. User mode is basically a "restricted" mode. Do nothing but some harmless behavior.
   [https://medicineyeh.wordpress.com/2015/02/10/kernel-mode-%E8%88%87-user-mode-%E7%9A%84%E6%A6%82%E5%BF%B5/]
   
+ - kernal vs shell
+   -核心（Kernel|內核）
+      - 外核心系統，也被稱為縱向結構作業系統，是一種比較極端的設計方法,它的設計理念是讓使用者程式的設計者來決定硬體介面的設計。外核心本身非常的小，它通常只負責系統保護和系統資源復用相         關的服務。
+     
+      - 傳統的核心設計（包括單核和微核）都對硬體作了抽象，把硬體資源或裝置驅動程式都隱藏在硬體抽象層下。比方說，在這些系統中，如果分配一段物理儲存，應用程式並不知道它的實際位置。
+
+      - 而外核的目標就是讓應用程式直接請求一塊特定的物理空間，一塊特定的磁碟塊等等。系統本身只保證被請求的資源當前是空閒的，應用程式就允許直接存取它。既然外核系統只提供了比較低階的硬         體操作，而沒有像其他系統一樣提供進階的硬體抽象，那麼就需要增加額外的執行庫支援。這些執行庫執行在外核之上，給使用者程式提供了完整的功能。
   
 ## Linux Operating System[教學影片](https://youtu.be/rYYKST4rG40)
 - linux kernal [英文版WIKI](https://en.wikipedia.org/wiki/Linux_kernel) [中文版WIKI](https://zh.wikipedia.org/wiki/Linux%E5%86%85%E6%A0%B8)
